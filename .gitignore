@@ -22,3 +22,12 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# Mac
+.DS_Store
+
+# IDE
+.idea
+*.iml
+.vscode/settings.json
+
