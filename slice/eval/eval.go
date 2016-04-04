@@ -50,7 +50,12 @@ func Eval(expr string) int {
 		}
 	}
 
-	for _, token := range strings.Split(expr, " ") {
+	// for _, token := range strings.Split(expr, " ") {
+	for _, s := range expr {
+		if s == 32 {
+			continue
+		}
+		token := string(s)
 		switch token {
 		case "(":
 			ops = append(ops, token)
