@@ -59,3 +59,11 @@ func ExampleCount2() {
 	// 나 2
 	// 다 1
 }
+
+func ExampleHasDupeRune() {
+	fmt.Println(HasDupeRune("숨박꼭질"))
+	fmt.Println(HasDupeRune("다시합시다"))
+	// Output:
+	// false
+	// true
+}
