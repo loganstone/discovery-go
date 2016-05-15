@@ -2,7 +2,7 @@ package methods
 
 import "fmt"
 
-func ExampleMultiSet() {
+func ExampleMutilSet() {
 	val := MultiSet{}
 	fmt.Println(val)
 	val.Insert("ventus")
@@ -12,12 +12,14 @@ func ExampleMultiSet() {
 	val.Insert("maestro")
 	fmt.Println(val.Count("maestro"))
 	val.Erase("maestro")
+	fmt.Println(val.Count("maestro"))
 	fmt.Println(val)
 	fmt.Println(val.Count("ventus"))
 	// Output:
 	// { }
 	// { ventus ventus ventus }
 	// 1
+	// 0
 	// { ventus ventus ventus }
 	// 3
 }
