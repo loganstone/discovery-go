@@ -2,9 +2,19 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/hyunsuk/discovery-go/slice/eval"
 )
+
+// CountDown is printing count down number.
+func CountDown(seconds int) {
+	for seconds > 0 {
+		fmt.Println(seconds)
+		time.Sleep(time.Second)
+		seconds--
+	}
+}
 
 func main() {
 	a := []int{1, 2, 3, 4, 5, 6}
@@ -25,4 +35,9 @@ func main() {
 	fmt.Println(eval.Eval("3 * ( 3 + 1 * 3 ) / 2"))
 	fmt.Println("3 * ( ( 3 + 1 ) * 3 ) / 2")
 	fmt.Println(eval.Eval("3 * ( ( 3 + 1 ) * 3 ) / 2"))
+
+	time.AfterFunc(3*time.Second, func() {
+		fmt.Println("I'm so excited!!")
+	})
+	CountDown(5)
 }
