@@ -11,3 +11,17 @@ func PlusOne(in <-chan int) <-chan int {
 	}()
 	return out
 }
+
+// IntPipe is return channel int
+type IntPipe func(<-chan int) <-chan int
+
+// Chain is return IntPipe
+func Chain(ps ...IntPipe) IntPipe {
+	return func(in <-chan int) <-chan int {
+		c := in
+		for _, p := range ps {
+			c = p(c)
+		}
+		return c
+	}
+}
